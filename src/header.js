@@ -3,6 +3,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
 import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import { motion } from "framer-motion";
+var ReactRotatingText = require("react-rotating-text");
 
 const Header = () => {
     const [show, handleShow] = useState(false);
@@ -19,7 +20,33 @@ const Header = () => {
     }, []);
 
     const navLinks = [
-        { link: "Skills", path: "/#skills" },
+        {
+            link: (
+                <ReactRotatingText
+                    pause={4000}
+                    items={[
+                        "Version Control/Git/Heroku",
+                        "Web Development",
+                        "ES6",
+                        "HTML5",
+                        "CSS3",
+                        "Tailwind CSS",
+                        "SASS",
+                        "ReactJS",
+                        "Redux",
+                        "JavaScript",
+                        "TypeScript",
+                        "NodeJS",
+                        "ExpressJS",
+                        "MongoDB",
+                        "Firebase",
+                        "Linode",
+                        "API integration",
+                    ]}
+                />
+            ),
+            path: "",
+        },
         { link: "Projects", path: "/#projects" },
         { link: "Let's Talk", path: "/#lets_talk" },
     ];
@@ -40,9 +67,9 @@ const Header = () => {
             <h1 className="font-gemunu text-7xl text-blue-600 w-1/2">V!</h1>
             <Nav className="font-raleway font-light  text-lg flex justify-between items-center w-1/2">
                 {navLinks.map((navLink, index) => (
-                    <NavItem key={index}>
+                    <NavItem className="w-full flex justify-evenly" key={index}>
                         <Link href={navLink.path}>
-                            <NavLink className="cursor-pointer ">
+                            <NavLink className="cursor-pointer">
                                 {navLink.link}
                             </NavLink>
                         </Link>
