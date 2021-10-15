@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 var ReactRotatingText = require("react-rotating-text");
+import Card from "./project_card/card";
 
 const Sections = () => {
     const [showText, setShowText] = useState("Victor");
@@ -28,9 +29,11 @@ const Sections = () => {
                 />
             </section>
 
-            {/* <section id="#projects">
-                <h1>PROJECTS</h1>{" "}
-            </section> */}
+            <section id="#projects">
+                <h2 className="text-center text-3xl">Projects</h2>
+                <Card />
+            </section>
+            <section className="h-30">hello</section>
         </div>
     );
 };

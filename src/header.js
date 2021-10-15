@@ -28,6 +28,7 @@ const Header = () => {
                         "Version Control/Git/Heroku",
                         "Web Development",
                         "ES6",
+                        "ejs",
                         "HTML5",
                         "CSS3",
                         "Tailwind CSS",
@@ -41,7 +42,10 @@ const Header = () => {
                         "MongoDB",
                         "Firebase",
                         "Linode",
+                        "OAuth",
                         "API integration",
+                        "npm",
+                        "yarn",
                     ]}
                 />
             ),
