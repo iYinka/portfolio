@@ -3,12 +3,12 @@ import Link from "next/link";
 import { FaFacebookF, FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { FiLink } from "react-icons/fi";
 
-const CardComp = () => {
+const CardComp = ({ title, imgSrc, text, link, github }) => {
     return (
         <div class="max-w-md mx-auto bg-white rounded-xl shadow-2xl overflow-hidden md:max-w-sm">
             <div class="md:flex flex-col justify-between p-5">
-                <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-                    Titleuytyuftydgd
+                <div class=" tracking-wide text-sm text-indigo-500 font-semibold">
+                    {title}
                 </div>
                 {/* <div class="md:flex-shrink-0">
                     {" "}
@@ -16,22 +16,11 @@ const CardComp = () => {
                 </div> */}
             </div>
             <div>
-                <div class="p-8 flex justify-evenly gap-9">
-                    {/* <a
-                            href="#"
-                            class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
-                        > */}
-                    <div class="block mt-1 text-lg leading-tight font-medium text-black hover:underline">
-                        {" "}
-                        <img src="" alt="logo" />
-                    </div>
-                    {/* </a> */}
-                    <p class="mt-2 text-gray-500">
-                        Getting a new business off the ground is a lot of hard
-                        customers.
-                    </p>
+                <div class="flex justify-evenly gap-3 p-3">
+                    <img src={imgSrc} alt="logo" class="w-1/4 h-1/4" />
+                    <p class="mt-2 text-gray-500">{text}</p>
                 </div>
-                <Link href={{ pathname: "https://github.com" }}>
+                <Link href={{ pathname: `${link}` }}>
                     <a>
                         <FiLink
                             size={25}
@@ -41,7 +30,7 @@ const CardComp = () => {
                     </a>
                 </Link>
 
-                <Link href={{ pathname: "https://github.com/iYinka" }}>
+                <Link href={{ pathname: `${github}` }}>
                     <a>
                         <FaGithub
                             size={25}
